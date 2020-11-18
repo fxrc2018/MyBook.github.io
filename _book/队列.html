@@ -1,0 +1,391 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>队列 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    一级标题
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.2.1" data-path="队列.html">
+            
+                <a href="队列.html">
+            
+                    
+                    队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >队列</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>&#x2014;&#x2014;&#x4E3B;&#x8981;&#x53C2;&#x8003;&#x4E86;&#x4E2D;&#x56FD;&#x5927;&#x5B66;MOOC<a href="https://www.icourse163.org/course/ZJU-93001?tid=1002654021" target="_blank">&#x6570;&#x636E;&#x7ED3;&#x6784;</a>&#x8BFE;&#x7A0B;&#x7684;&#x5185;&#x5BB9;
+&#x961F;&#x5217;(Queue)&#xFF1A;&#x5177;&#x6709;&#x4E00;&#x5B9A;&#x64CD;&#x4F5C;&#x7EA6;&#x675F;&#x7684;&#x7EBF;&#x6027;&#x8868;&#x2014;&#x2014;&#x53EA;&#x80FD;&#x5728;&#x4E00;&#x7AEF;&#x63D2;&#x5165;&#xFF0C;&#x800C;&#x5728;&#x53E6;&#x4E00;&#x7AEF;&#x5220;&#x9664;&#x3002;
+&#x7C7B;&#x578B;&#x540D;&#x79F0;&#xFF1A;&#x961F;&#x5217;(Queue)
+&#x6570;&#x636E;&#x5BF9;&#x8C61;&#x96C6;&#xFF1A;&#x4E00;&#x4E2A;&#x6709;0&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x5143;&#x7D20;&#x7684;&#x6709;&#x7A77;&#x7EBF;&#x6027;&#x8868;&#x3002;
+&#x64CD;&#x4F5C;&#x96C6;&#xFF1A;&#x957F;&#x5EA6;&#x4E3A;MaxSize&#x7684;&#x961F;&#x5217;Q&#x2208;Queue&#xFF0C;&#x961F;&#x5217;&#x5143;&#x7D20;item&#x2208;ElementType</p>
+<ol>
+<li>Queue CreatQueue( int MaxSize )&#xFF1A;&#x751F;&#x6210;&#x957F;&#x5EA6;&#x4E3A;MaxSize&#x7684;&#x7A7A;&#x961F;&#x5217;&#xFF1B;</li>
+<li>int IsFullQ( Queue Q, int MaxSize )&#xFF1A;&#x5224;&#x65AD;&#x961F;&#x5217;Q&#x662F;&#x5426;&#x5DF2;&#x6EE1;&#xFF1B;</li>
+<li>void AddQ( Queue Q, ElementType item )&#xFF1A; &#x5C06;&#x6570;&#x636E;&#x5143;&#x7D20;item&#x63D2;&#x5165;&#x961F;&#x5217;Q&#x4E2D;&#xFF1B;</li>
+<li>int IsEmptyQ( Queue Q )&#xFF1A; &#x5224;&#x65AD;&#x961F;&#x5217;Q&#x662F;&#x5426;&#x4E3A;&#x7A7A;&#xFF1B;</li>
+<li>ElementType DeleteQ( Queue Q )&#xFF1A;&#x5C06;&#x961F;&#x5934;&#x6570;&#x636E;&#x5143;&#x7D20;&#x4ECE;&#x961F;&#x5217;&#x4E2D;&#x5220;&#x9664;&#x5E76;&#x8FD4;&#x56DE;&#x3002;</li>
+</ol>
+<p>&#x961F;&#x5217;&#x7684;&#x987A;&#x5E8F;&#x5B58;&#x50A8;&#x7ED3;&#x6784;&#x901A;&#x5E38;&#x7531;&#x4E00;&#x4E2A;&#x4E00;&#x7EF4;&#x6570;&#x7EC4;&#x548C;&#x4E00;&#x4E2A;&#x8BB0;&#x5F55;&#x961F;&#x5217;&#x5934;&#x5143;&#x7D20;&#x4F4D;&#x7F6E;&#x7684;&#x53D8;&#x91CF;front&#x4EE5;&#x53CA;&#x4E00;&#x4E2A;&#x8BB0;&#x5F55;&#x961F;&#x5217;&#x5C3E;&#x5143;&#x7D20;&#x4F4D;&#x7F6E;&#x7684;&#x53D8;&#x91CF;rear&#x7EC4;&#x6210;&#x3002;&#x4E0B;&#x9762;&#x662F;&#x5177;&#x4F53;&#x7684;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code>#include&lt;stdio.h&gt;
+#define MAX 10
+
+typedef struct NQueue* Queue; 
+struct NQueue{
+    int array[MAX];
+    int front;
+    int rear;
+};
+
+Queue createQueue(){
+    Queue queue = (Queue)malloc(sizeof(struct NQueue));
+    queue-&gt;front = 0;
+    queue-&gt;rear = 0;
+    return queue;
+}
+
+void insert(Queue queue,int data){
+    if((queue-&gt;rear+1)%MAX == queue-&gt;front){
+        printf(&quot;&#x961F;&#x5217;&#x6EE1;&#xFF01;&quot;);
+        return;
+    }
+    queue-&gt;array[(++queue-&gt;rear)%MAX] = data;
+}
+
+int del(Queue queue){
+    if(queue-&gt;rear%MAX == queue-&gt;front){
+        printf(&quot;&#x961F;&#x5217;&#x7A7A;&#xFF01;&quot;);
+        return -1;
+    }
+    return queue-&gt;array[(++queue-&gt;front)%MAX];
+}
+
+int main(){
+    Queue queue = createQueue();
+    int i;
+    for(i=0;i&lt;10;i++){
+        insert(queue,i);
+    }
+    for(i=0;i&lt;10;i++){
+        printf(&quot;%d &quot;,del(queue));
+    }
+    free(queue);
+    return 0;
+}
+</code></pre><p>&#x8FD9;&#x4E2A;&#x7A0B;&#x5E8F;&#x600E;&#x4E48;&#x8BF4;&#x5462;&#xFF0C;&#x7B80;&#x5355;&#xFF0C;&#x4F46;&#x662F;&#x6709;&#x4E00;&#x4E9B;&#x503C;&#x5F97;&#x6CE8;&#x610F;&#x7684;&#x5730;&#x65B9;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;&#x5C31;&#x662F;&#x7528;&#x6570;&#x7EC4;&#x5FAA;&#x73AF;&#x5B58;&#x50A8;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8981;&#x533A;&#x5206;&#x6EE1;&#x548C;&#x7A7A;&#x8FD9;&#x4E24;&#x79CD;&#x60C5;&#x51B5;&#x3002;&#x5982;&#x679C;&#x90FD;&#x662F;&#x4ECE;0&#x5230;n-1&#xFF0C;&#x5C31;&#x4E0D;&#x80FD;&#xFF0C;&#x56E0;&#x4E3A;&#x961F;&#x5217;&#x4E00;&#x5171;&#x6709;n+1&#x4E2D;&#x60C5;&#x51B5;&#x3002;&#x89E3;&#x51B3;&#x7684;&#x529E;&#x6CD5;&#x5C31;&#x662F;&#x589E;&#x52A0;&#x6807;&#x8BB0;&#xFF0C;&#x6216;&#x8005;&#x53EA;&#x4F7F;&#x7528;n-1&#x4E2A;&#x4F4D;&#x7F6E;&#x3002;&#x8FD9;&#x91CC;&#x5C31;&#x662F;&#x91C7;&#x7528;&#x4E86;&#x7B2C;&#x4E8C;&#x79CD;&#x65B9;&#x6CD5;&#x3002;</p>
+<pre><code>#include&lt;stdio.h&gt;
+typedef struct node* Node;
+typedef struct QNode* Queue;
+
+struct node {
+    int data;
+    struct node* next;
+};
+
+struct QNode {
+    struct node* front;
+    struct node* rear;
+};
+
+Node createNode(int data) {
+    Node node = (Node)malloc(sizeof(struct node));
+    node-&gt;data = data;
+    node-&gt;next = NULL;
+    return node;
+}
+
+Queue createQueue() {
+    Queue queue = (Queue)malloc(sizeof(struct QNode));
+    queue-&gt;front = NULL;
+    queue-&gt;rear = NULL;
+    return queue;
+}
+
+void insert(Queue queue,int data) {
+    if(queue-&gt;rear == NULL) {
+        queue-&gt;rear = createNode(data);
+        queue-&gt;front = queue-&gt;rear;
+    } else {
+        queue-&gt;rear-&gt;next = createNode(data);
+        queue-&gt;rear = queue-&gt;rear-&gt;next;
+    }
+}
+
+int del(Queue queue) {
+    if(queue-&gt;front == NULL) {
+        printf(&quot;&#x961F;&#x5217;&#x7A7A;&#xFF01;&quot;);
+        return -1;
+    }
+    Node node;
+    node = queue-&gt;front;
+    int data = node-&gt;data;
+    if(queue-&gt;front == queue-&gt;rear) {
+        queue-&gt;front=NULL;
+        queue-&gt;rear =NULL;
+    } else {
+        queue-&gt;front = node-&gt;next;
+    }
+    free(node);
+    return data;
+
+}
+
+int main() {
+    Queue queue = createQueue();
+    int i;
+    for(i=0; i&lt;10; i++) {
+        insert(queue,i);
+    }
+    for(i=0; i&lt;11; i++) {
+        printf(&quot;%d &quot;,del(queue));
+    }
+    free(queue);
+    return 0;
+}
+</code></pre><p>&#x8FD9;&#x4E2A;&#x76F8;&#x5BF9;&#x6765;&#x8BF4;&#xFF0C;&#x8FD8;&#x662F;&#x6BD4;&#x8F83;&#x5BB9;&#x6613;&#x7684;&#x3002;
+PS&#xFF1A;&#x4ECA;&#x5929;&#x4E0D;&#x77E5;&#x600E;&#x4E48;&#x4E86;&#xFF0C;&#x7ADF;&#x7136;&#x51FA;&#x73B0;&#x4E86;&#x4E24;&#x6B21;&#x628A;&#x8D4B;&#x503C;&#x548C;&#x7B49;&#x4E8E;&#x5F04;&#x6DF7;&#x4E86;&#xFF0C;&#x7ED3;&#x679C;&#x81EA;&#x7136;&#x5F88;&#x60B2;&#x5267;&#xFF0C;&#x68C0;&#x67E5;&#x4E86;&#x5341;&#x51E0;&#x5206;&#x949F;&#xFF0C;&#x624D;&#x53D1;&#x73B0;&#x8FD9;&#x4E48;&#x4E00;&#x4E2A;&#x4F4E;&#x7EA7;&#x7684;&#x9519;&#x8BEF;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"队列","level":"1.2.1","depth":2,"previous":{"title":"一级标题","level":"1.2","depth":1,"ref":"","articles":[{"title":"队列","level":"1.2.1","depth":2,"path":"队列.md","ref":"队列.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","livereload"],"pluginsConfig":{"expandable-chapters":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"队列.md","mtime":"2020-11-18T12:59:40.451Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-11-18T14:53:37.001Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
